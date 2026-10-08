@@ -1,0 +1,16 @@
+# Versions pinned below were recorded in the notebook's environment output
+# (Kaggle, Python 3.12.13). Packages without a pin were imported but their
+# version was not logged.
+
+tensorflow==2.20.0
+numpy==2.0.2
+pandas
+scipy
+scikit-learn
+matplotlib
+opencv-python
+
+# Notebook / visualisation utilities
+ipython
+jupyter
+pydot  # required by tf.keras.utils.plot_model (also needs the Graphviz system package)
