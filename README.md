@@ -194,16 +194,24 @@ ECG_NITW_RESULTS/
 
 ## Trained Models
 
-The trained models (~59 MB each) are **not stored in this Git repository**. They will be published as assets on this repository's **GitHub Releases** page.
+The trained models (~59 MB each) are **not stored in this Git repository**. They are published as assets of the **[CardioFormerNet v1.0.0 release](https://github.com/Jash640/ECG-NITW-RESULTS/releases/tag/v1.0.0)**.
 
-| File | Description |
-|---|---|
-| `best_model.keras` | Best checkpoint by validation accuracy (ModelCheckpoint) |
-| `cnn_transformer_final.keras` | Model saved after training (best weights restored by EarlyStopping) |
-| `best_cnn_transformer.keras` | Additional saved model from the project |
-| `ecg_cnn_cbam_transformer.keras` | Additional saved model from the project |
+| File | Description | Download |
+|---|---|---|
+| `best_model.keras` | Best checkpoint by validation accuracy (ModelCheckpoint) | [download](https://github.com/Jash640/ECG-NITW-RESULTS/releases/download/v1.0.0/best_model.keras) |
+| `cnn_transformer_final.keras` | Model saved after training (best weights restored by EarlyStopping) | [download](https://github.com/Jash640/ECG-NITW-RESULTS/releases/download/v1.0.0/cnn_transformer_final.keras) |
+| `best_cnn_transformer.keras` | Additional saved model from the project | [download](https://github.com/Jash640/ECG-NITW-RESULTS/releases/download/v1.0.0/best_cnn_transformer.keras) |
+| `ecg_cnn_cbam_transformer.keras` | Additional saved model from the project | [download](https://github.com/Jash640/ECG-NITW-RESULTS/releases/download/v1.0.0/ecg_cnn_cbam_transformer.keras) |
 
-After downloading, place them in `models/`. The models use a custom `PositionEmbedding` layer and `Lambda` layers (in CBAM), so loading requires the layer definition from the notebook:
+SHA-256 checksums for each file are listed in the release notes.
+
+To download all models into `models/` with the GitHub CLI:
+
+```bash
+gh release download v1.0.0 -R Jash640/ECG-NITW-RESULTS -p "*.keras" -D models
+```
+
+If you download them manually, place them in `models/`. The models use a custom `PositionEmbedding` layer and `Lambda` layers (in CBAM), so loading requires the layer definition from the notebook:
 
 ```python
 import tensorflow as tf
